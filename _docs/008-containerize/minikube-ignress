@@ -1,0 +1,33 @@
+
+minikube addons enable ingress
+
+verify 
+kubectl get pods -n ingress-nginx
+
+
+kubectl get ingress
+
+
+removed `- --publish-status-address=localhost`
+
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: adminer-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  rules:
+    - host: openguard.local
+      http:
+        paths:
+          - path: /adminer
+            pathType: Prefix
+            backend:
+              service:
+                name: adminer
+                port:
+                  number: 8080
+```
