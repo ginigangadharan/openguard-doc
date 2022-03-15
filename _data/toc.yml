@@ -1,0 +1,76 @@
+- title: Workshops
+  url: docs
+  links:
+    - title: "Overview"
+      url: "docs/overview"
+      children:
+        - title: FAQ
+          url: "docs/overview/faq"
+    - title: "Installation"
+      url: "docs/installation"
+      children:
+        - title: Ansible
+          url: "docs/automation/ansible"
+        #- title: Puppet ⏳
+        #  url: "docs/automation#development"
+        #- title: Chef ⏳
+        #  url: "docs/automation#customization"
+    - title: "Containers"
+      url: "docs/containers"
+      children:
+        - title: Docker ⏳
+          url: "docs/containers/docker"
+        - title: Kubernetes ⏳
+          url: "docs/containers/kubernetes"
+        - title: OpenShift ⏳
+          url: "docs/containers#customization"      
+    - title: "CI/CD"
+      url: "docs/ci-cd"
+      children:
+        - title: Jenkins ⏳
+          url: "docs/ci-cd"
+        - title: ArgoCD ⏳
+          url: "docs/ci-cd"
+        - title: GitHub Actions ⏳
+          url: "docs/ci-cd"
+    - title: "Linux"
+      url: "docs/linux"
+    - title: "Cloud"
+      url: "docs/cloud"
+      children:
+        - title: Azure
+          url: "docs/cloud/azure"
+    - title: "Programming"
+      url: "docs/programming"
+      children:
+        - title: Python ⏳
+          url: "docs/programming#getting-started"
+        - title: GoLang ⏳
+          url: "docs/programming/go-lang"
+    - title: "Library"
+      url: "docs/library"          
+- title: "Extras"
+  url: "docs/extras"
+  links:
+    - title: "About"
+      url: "about"  
+    - title: "News"
+      url: "news"      
+    #- title: Quizzes
+    #  url: "docs/extras/example-quiz"
+    - title: Tags Index
+      url: "tags"
+    - title: Contributors
+      url: "contributors"
+    #- title: Credits
+    #  url: "credits"
+    #- title: "Getting Started"
+    #  url: "docs/getting-started"
+    #  children:
+    #    - title: Features
+    #      url: "docs/getting-started#getting-started"
+    #    - title: Development
+    #      url: "docs/getting-started#development"
+    #    - title: Customization
+    #      url: "docs/getting-started#customization"
+
