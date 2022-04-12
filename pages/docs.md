@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Workshops
+title: Documentation Sitemap
 permalink: /docs/
 ---
 
-# All Workshops
+# All Documentations
 
 Welcome to the **{{ site.title }}** documentation pages! Here you can quickly jump to a particular page.
 

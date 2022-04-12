@@ -170,7 +170,7 @@ section {
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, helvetica neue, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 180%;
     color: #333;
@@ -17969,7 +17969,7 @@ a.text-dark:focus {
 .td-navbar .nav-link {
     text-transform: none;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .td-navbar .td-search-input {

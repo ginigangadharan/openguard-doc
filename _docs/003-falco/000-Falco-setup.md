@@ -116,12 +116,13 @@ ExecStart=/usr/bin/falco -T openguarddemo --pidfile=/var/run/falco.pid
 ## configure http_output to openguard api
 http_output:
   enabled: True
-  url: http://192.168.56.1:8000/api/incident_report/?source_hostname=Ubuntu-20-CP
+  url: http://192.168.56.1:8000/api/incident_report/?source_hostname=Ubuntu-20-CP&token=TPNAQA2A2GBO2DOQHWXC
   user_agent: "falcosecurity/falco"
 ## configure json_output
 # Whether to output events in json or text
 json_output: true
 
+TPNAQA2A2GBO2DOQHWXC
 
 ## Disable json value in output
 # When using json output, whether or not to include the "output" property

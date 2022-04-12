@@ -32,3 +32,17 @@ The ansible_runner.run() accepts following values for inventory parameter.
 4. A list of inventory sources, or an empty list to disable passing inventory
 
 Default value, if not passed, for this parameter is private_data_dir/inventory directory. Passing this parameter overrides the inventory directory/file.
+
+
+
+### change timezone 
+
+Ubuntu:
+
+```
+root@Ubuntu-20-CP:~# systemctl enable systemd-timesyncd.service
+root@Ubuntu-20-CP:~# systemctl start systemd-timesyncd.service
+
+sudo dpkg-reconfigure tzdata
+```
+

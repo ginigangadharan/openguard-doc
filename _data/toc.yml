@@ -1,16 +1,20 @@
-- title: Workshops
-  url: docs
+- title: Gettting Started
+  url: #
   links:
     - title: "Overview"
       url: "docs/overview"
-      children:
-        - title: FAQ
-          url: "docs/overview/faq"
+      #children:
+      #  - title: FAQ
+      #    url: "docs/overview/faq"
     - title: "Installation"
       url: "docs/installation"
       children:
-        - title: Ansible
-          url: "docs/automation/ansible"
+        - title: OpenGuard Engine
+          url: "docs/installation/openguard-engine-installation"
+        - title: OpenGuard Runner
+          url: "docs/installation/openguard-runner-installation"
+        - title: Database
+          url: "docs/installation/database-installation"
         #- title: Puppet ⏳
         #  url: "docs/automation#development"
         #- title: Chef ⏳

@@ -19,7 +19,8 @@ Serialization is the process of converting a Model to JSON. Using a serializer, 
 root@Ubuntu-20-CP:~# curl -X POST http://192.168.56.1:8000/app/api/nodes/managednodes/ -H "Content-Type: application/json" -d '{"instance_name": "node66","instance_name_connection": "node66.lab.local","instance_credential": "test55"}'
 
 
-$ curl -X POST http://192.168.56.1:8000/app/api/incident_report/ -H "Content-Type: application/json" -d '{"time":"2022-03-03T21:22:00Z","priority":"low","rule":"newrule","output":"test outputnew"}'
+$ curl -X POST http://192.168.56.1:8000/api/incident_report/?source_hostname=$HOSTNAME -H "Content-Type: application/json" -d '{"time":"2022-03-16T05:45:57.483251Z","priority":"Critical","rule":"FALCO_OGRULE_DIR_TMP","output":"05:45:57.483251536: Critical Permission or ownership changed for /tmp (user=root command=chmod 1644 /tmp/ file=<NA> parent=bash pcmdline=bash gparent=sudo)"}'
+
 ```
 
 ## Change branding on REST API page
@@ -27,7 +28,129 @@ $ curl -X POST http://192.168.56.1:8000/app/api/incident_report/ -H "Content-Typ
 Read: https://www.django-rest-framework.org/topics/browsable-api/#customizing
 
 - create `templates/rest_framework` directory
-- 
+
+
+
+
+## Fix Job API
+
+http://192.168.56.1:8000/api/incident_fix/ - can access from browser
+
+## REST API Token
+
+- [Token Based Authentication for Django Rest Framework](https://medium.com/quick-code/token-based-authentication-for-django-rest-framework-44586a9a56fb)
+- [How to Implement Token Authentication using Django REST Framework](https://simpleisbetterthancomplex.com/tutorial/2018/11/22/how-to-implement-token-authentication-using-django-rest-framework.html)
+
+
+Create Token
+
+`./manage.py drf_create_token <username>`
+
+regenerate token
+
+`./manage.py drf_create_token -r <username>`
+
+```shell
+$ python manage.py drf_create_token username
+
+$ python manage.py drf_create_token admin
+Generated token c48b2d2bab41c9bf17c1bf2ec37f2d13fb9262bc for user admin
+$ python manage.py drf_create_token operator
+Generated token a7fdcd30f90350dafa260ed1bf1fa207aeb37ee4 for user operator
+```
+
+### Disable Token auth for some views
+
+Disable auth for class based views
+
+```python
+class HelloView(APIView):
+    authentication_classes = [] #disables authentication
+    permission_classes = [] #disables permission
+.
+.
+```
+
+Enable auth for class based views
+
+```python
+class HelloView(APIView):
+    permission_classes = (IsAuthenticated,)  
+.
+.
+```
+
+Disable auth for function based views
+
+```python
+@api_view(['GET', 'POST', 'DELETE'])
+@authentication_classes([])
+@permission_classes([])
+def incident_report(request):
+.
+.
+.
+```
+
+enable auth for function based views:
+
+```python
+@api_view(['GET', 'POST'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def incident_fix(request):
+.
+.
+.
+```
+
+## check API using httpie
+
+```shell
+pip install httpie
+```
+
+use `httpie`
+
+```shell
+http http://192.168.56.1:8000/api/hello/
+HTTP/1.1 401 Unauthorized
+Allow: GET, HEAD, OPTIONS
+Content-Length: 58
+Content-Type: application/json
+Cross-Origin-Opener-Policy: same-origin
+Date: Thu, 17 Mar 2022 12:14:33 GMT
+Referrer-Policy: same-origin
+Server: WSGIServer/0.2 CPython/3.9.10
+Vary: Accept
+WWW-Authenticate: Token
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+
+{
+    "detail": "Authentication credentials were not provided."
+}
+
+
+$ http http://192.168.56.1:8000/api/hello/ 'Authorization: Token YOUR_TOKEN_STRING'
+HTTP/1.1 200 OK
+Allow: GET, HEAD, OPTIONS
+Content-Length: 27
+Content-Type: application/json
+Cross-Origin-Opener-Policy: same-origin
+Date: Thu, 17 Mar 2022 12:24:28 GMT
+Referrer-Policy: same-origin
+Server: WSGIServer/0.2 CPython/3.9.10
+Vary: Accept
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+
+{
+    "message": "Hello, World!"
+}
+
+```
+
 ## Appendix
 
 - [How to set/get a list type query param in Django Rest Framework](https://lucyeun95.medium.com/how-to-set-get-a-list-type-query-param-in-django-rest-framework-831f30476111)

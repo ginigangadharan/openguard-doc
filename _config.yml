@@ -29,9 +29,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://openguard.iamgini.com/" # the base hostname & protocol for your site
 
 # Link 
-parent_site:
-  url: https://www.iamgini.com
-  title: iamgini.com
+#parent_site:
+#  url: https://www.iamgini.com
+#  title: iamgini.com
 
 # Social (First three Required)
 repo: "https://github.com/ginigangadharan/openguard-app"
