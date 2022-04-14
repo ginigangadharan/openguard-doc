@@ -14,7 +14,7 @@
         - title: OpenGuard Runner
           url: "docs/installation/openguard-runner-installation"
         - title: Database
-          url: "docs/installation/database-installation"
+          url: "docs/installation/database"
         #- title: Puppet ⏳
         #  url: "docs/automation#development"
         #- title: Chef ⏳
