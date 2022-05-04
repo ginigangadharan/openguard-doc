@@ -19,24 +19,19 @@
         #  url: "docs/automation#development"
         #- title: Chef ⏳
         #  url: "docs/automation#customization"
-    - title: "Containers"
-      url: "docs/containers"
+    - title: "Managed Nodes"
+      url: "docs/managed-nodes"
+      
+    - title: "Detection Sources"
+      url: "docs/detection"
       children:
-        - title: Docker ⏳
-          url: "docs/containers/docker"
-        - title: Kubernetes ⏳
-          url: "docs/containers/kubernetes"
-        - title: OpenShift ⏳
-          url: "docs/containers#customization"      
-    - title: "CI/CD"
-      url: "docs/ci-cd"
+        - title: Falco
+          url: "docs/managed-nodes/falco"             
+    - title: "Automation"
+      url: "docs/automation"
       children:
-        - title: Jenkins ⏳
-          url: "docs/ci-cd"
-        - title: ArgoCD ⏳
-          url: "docs/ci-cd"
-        - title: GitHub Actions ⏳
-          url: "docs/ci-cd"
+        - title: Ansible
+          url: "docs/automation/ansible"
     - title: "Linux"
       url: "docs/linux"
     - title: "Cloud"

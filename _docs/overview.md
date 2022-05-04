@@ -7,6 +7,8 @@ description: OpenGuard Overview
 
 ## OpenGuard - Overview
 
+![OpenGuard High Level Design](/assets/img/openguard-hld.png){:class="img-responsive"}
+
 **OpenGuard** is a zero-touch security automation project build on top of multiple Open-Source tools and softwares.
 
 This project is focusing on safeguarding the IT infrastructure and environment by monitoring the security incidents and automatically remediating them based on industrial security standards and benchmarks. The name **OpenGuard** - Security Automation and Remediation came from the concept of guarding the IT infrastructure environment using open-source tools.
