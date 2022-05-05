@@ -26,41 +26,29 @@
       url: "docs/detection"
       children:
         - title: Falco
-          url: "docs/managed-nodes/falco"             
-    - title: "Automation"
-      url: "docs/automation"
-      children:
-        - title: Ansible
-          url: "docs/automation/ansible"
-    - title: "Linux"
-      url: "docs/linux"
-    - title: "Cloud"
-      url: "docs/cloud"
-      children:
-        - title: Azure
-          url: "docs/cloud/azure"
-    - title: "Programming"
-      url: "docs/programming"
-      children:
-        - title: Python ⏳
-          url: "docs/programming#getting-started"
-        - title: GoLang ⏳
-          url: "docs/programming/go-lang"
-    - title: "Library"
-      url: "docs/library"          
+          url: "docs/detection/falco"             
+    - title: "Security Rules"
+      url: "docs/rules"
+      #children:
+      #  - title: Falco
+      #    url: "docs/detection/falco"     
+    - title: "Credentials"
+      url: "docs/credentials"
+    - title: "Tokens"
+      url: "docs/tokens"      
 - title: "Extras"
   url: "docs/extras"
   links:
     - title: "About"
       url: "about"  
-    - title: "News"
-      url: "news"      
+    #- title: "News"
+    #  url: "news"      
     #- title: Quizzes
     #  url: "docs/extras/example-quiz"
-    - title: Tags Index
-      url: "tags"
-    - title: Contributors
-      url: "contributors"
+    #- title: Tags Index
+    #  url: "tags"
+    #- title: Contributors
+    #  url: "contributors"
     #- title: Credits
     #  url: "credits"
     #- title: "Getting Started"

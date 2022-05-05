@@ -6,7 +6,7 @@ description: Falco configuration
 ---
 # Falco configuration
 
-## Intaling Falco
+## Instaling Falco
 
 Refer to [Falco installation](https://falco.org/docs/getting-started/installation/) documentations for details.
 
@@ -50,7 +50,7 @@ http_output:
 json_output: true
 ```
 
-## Deplying rules to new hosts
+## Deploying rules to new hosts
 
 Falco rules are located in following files.
 
@@ -78,9 +78,11 @@ Sample rule for detecting `/tmp` permission changes
 
 Refer to [Rules section](https://falco.org/docs/rules/) and [Supported Fields for Conditions and Outputs](https://falco.org/docs/rules/supported-fields/) for creating rules.
 
-### Automated deployment using Ansible
+### Automated Falco Rules deployment using Ansible
 
 (using role `deploy-falco-rules`)
+
+Instead of configuring the rules manually, existing playbook can be used to deploy Falco rules as follows.
 
 ```shell
 $ git clone https://github.com/ginigangadharan/openguard-runner

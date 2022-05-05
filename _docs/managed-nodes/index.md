@@ -9,6 +9,8 @@ description: Managed Nodes Configuration
 
 Managed node can be any machine which can run a standard monitoring or alerting tool and send alert to OpenGuard Engine API over HTTPS.
 
+![Managed Node](/assets/img/managed-nodes.png)
+
 ## Supported Managed Nodes
 
 - Linux
@@ -16,6 +18,8 @@ Managed node can be any machine which can run a standard monitoring or alerting 
 - Network devices
 - Cloud platform
 - Container platforms
+
+![Managed Node](/assets/img/managed-node.png)
 
 ## Monitoring and Alerting
 

@@ -13,6 +13,10 @@ description: OpenGuard Overview
 
 This project is focusing on safeguarding the IT infrastructure and environment by monitoring the security incidents and automatically remediating them based on industrial security standards and benchmarks. The name **OpenGuard** - Security Automation and Remediation came from the concept of guarding the IT infrastructure environment using open-source tools.
 
+### OpenGuard Dashboard
+
+![Dashboard](/assets/img/dashboard.png)
+
 ### OpenGuard Engine
 
 **OpenGuard** is the incident collection and decision making engine which will listen to the standard monitoring and alerting tools.

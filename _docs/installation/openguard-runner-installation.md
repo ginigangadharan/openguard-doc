@@ -45,7 +45,7 @@ ExecStop=/usr/bin/python3 /vagrant/openguard-runner-stop.py
 WantedBy=multi-user.target
 ```
 
-## Intall Python Libraries 
+## Install Python Libraries
 
 Note: Install libraries for `root` user as the service will be running as `root`.
 
