@@ -19,13 +19,3 @@ $ python manage.py migrate
 
 
 ```
-
-##
-
-
-## References
-
-- [Dockerizing a Python Django Web Application](https://semaphoreci.com/community/tutorials/dockerizing-a-python-django-web-application)
-- [Dockerizing Django with Postgres, Gunicorn, and Nginx](https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/)
-- [Get Started With Django Part 1: Build a Portfolio App](https://realpython.com/get-started-with-django-1/)
-- 

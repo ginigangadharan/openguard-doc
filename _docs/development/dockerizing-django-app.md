@@ -1,37 +1,65 @@
-# Dockerizing App
+---
+title: Dockerizing Django App
+tags:
+ - docker
+ - container
+ - podman
+description: Dockerizing Django App
+---
 
-- [Dockerizing App](#dockerizing-app)
-  - [Preparing the Containerization](#preparing-the-containerization)
-    - [Create the `Dockerfile`](#create-the-dockerfile)
-    - [Create the `requirements.txt`](#create-the-requirementstxt)
-    - [Create `docker-compose.yml`](#create-docker-composeyml)
-  - [Build the image](#build-the-image)
-  - [Preparing the Django project](#preparing-the-django-project)
-  - [Connect the database](#connect-the-database)
+# Dockerizing Django App
 
-## Preparing the Containerization
-
-### Create the `Dockerfile`
+## Create the `Dockerfile`
 
 ```python
 # syntax=docker/dockerfile:1
+# syntax=docker/dockerfile:1
 FROM python:3
+
+## PYTHONDONTWRITEBYTECODE: Prevents Python from 
+##   writing pyc files to disc (equivalent to python -B option)
 ENV PYTHONDONTWRITEBYTECODE=1
+
+## PYTHONUNBUFFERED: Prevents Python from 
+##   buffering stdout and stderr (equivalent to python -u option)
 ENV PYTHONUNBUFFERED=1
-WORKDIR /code
+
+# install dependencies
+RUN pip install --upgrade pip
+WORKDIR /code/
 COPY requirements.txt /code/
 RUN pip install -r requirements.txt
-COPY . /code/
+
+RUN mkdir -pv /var/log/gunicorn/ \
+    && mkdir -pv /var/run/gunicorn/
+
+COPY . .
+
+EXPOSE 8000
+
+CMD ["gunicorn", "-c", "config/gunicorn/dev.py"]
 ```
 
-### Create the `requirements.txt`
+## Create the `requirements.txt`
 
 ```python
 Django>=4.0
-psycopg2>=2.8  # PostgreSQL database adapter for Python
+psycopg2>=2.8
+gunicorn>=20
+djangorestframework
+django-cors-headers
+django-jsonfield
+
+ansible_runner
+ansible-core>==2.12
+
+django-crispy-forms
+crispy_bootstrap5
 ```
 
-### Create `docker-compose.yml`
+## Create `docker-compose.yml`
+
+For local development with Docker containers.
 
 ```yaml
 version: "3.9"
@@ -71,7 +99,6 @@ services:
 ## podman build -t IMAGE_NAME .
 $ podman build -t openguard .
 ```
-
 
 ## Preparing the Django project
 

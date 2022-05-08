@@ -35,12 +35,26 @@
     - title: "Credentials"
       url: "docs/credentials"
     - title: "Tokens"
-      url: "docs/tokens"      
+      url: "docs/tokens"
+
 - title: "Extras"
   url: "docs/extras"
   links:
     - title: "About"
       url: "about"  
+    - title: "Development"
+      url: "docs/development"
+      children:
+        - title: Dockerizing Django
+          url: "docs/development/dockerizing-django-app"
+        - title: Django API
+          url: "docs/development/django-api"
+          
+    - title: "Troubleshooting"
+      url: "docs/troubleshooting"     
+    - title: "Resources"
+      url: "docs/resources"
+            
     #- title: "News"
     #  url: "news"      
     #- title: Quizzes

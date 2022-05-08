@@ -1,7 +1,4 @@
 
-[Dockerizing Django with Postgres, Gunicorn, and Nginx](https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/)
-
-
 ## create docker config
 
 
@@ -38,3 +35,38 @@ https://github.com/do-community/django-polls/blob/polls-docker/django-polls/mysi
 ## set up ingress
 
 https://www.digitalocean.com/community/tutorials/how-to-deploy-a-scalable-and-secure-django-application-with-kubernetes
+
+## Rollout new deployment
+
+```shell
+kubectl rollout restart deploy openguard
+kubectl rollout restart deploy openguard-nginx
+```
+
+## Troubleshooting
+
+```shell
+kubectl run -it busybox --image=redhat/ubi8 --rm -- /bin/sh
+kubectl run -it busybox --image=busybox --rm -- /bin/sh
+
+
+podman build -t localhost/openguard . 
+
+##nginx image
+$ podman build -t localhost/openguard-nginx .
+
+
+podman run -dt -p 32100:80/tcp -p 32101:8000/tcp localhost/openguard 
+
+#You can check the ports published and occupied:
+$ podman port --all 
+682ab3517c78    80/tcp -> 0.0.0.0:32100
+682ab3517c78    8000/tcp -> 0.0.0.0:32101
+
+
+# build and push image
+$ podman login docker.io
+
+# troubleshoot
+podman run -it localhost/openguard /bin/bash
+````
