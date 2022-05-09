@@ -9,14 +9,6 @@ description: Resources and References
 
 # Resources and References
 
-- [Resources and References](#resources-and-references)
-  - [Python Django](#python-django)
-  - [Django API](#django-api)
-  - [Django REST API Token](#django-rest-api-token)
-  - [Django Pagination](#django-pagination)
-  - [Ansible Runner](#ansible-runner)
-    - [Passing inventory to ansible runner](#passing-inventory-to-ansible-runner)
-
 ## Python Django
 
 - [Dockerizing a Python Django Web Application](https://semaphoreci.com/community/tutorials/dockerizing-a-python-django-web-application)
