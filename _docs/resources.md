@@ -73,3 +73,14 @@ The ansible_runner.run() accepts following values for inventory parameter.
 
 Default value, if not passed, for this parameter is private_data_dir/inventory directory. Passing this parameter overrides the inventory directory/file.
 
+## Jekyll inside a container
+
+Docker/Podman/Kuebrnetes
+
+podman run --rm \
+  --volume="$PWD:/srv/jekyll:Z" \
+  -p 4000:4000 \
+  jekyll/jekyll \
+  jekyll serve
+
+podman run -dt -p 32080:8000/tcp localhost/openguard-doc
