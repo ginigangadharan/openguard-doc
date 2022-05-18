@@ -12,23 +12,22 @@ Refer to [Falco installation](https://falco.org/docs/getting-started/installatio
 
 
 ```shell
-## Fedora
-sudo rpm --import https://falco.org/repo/falcosecurity-3672BA8F.asc
-sudo curl -s -o /etc/yum.repos.d/falcosecurity.repo https://falco.org/repo/falcosecurity-rpm.repo
+$ sudo rpm --import https://falco.org/repo/falcosecurity-3672BA8F.asc
+$ sudo curl -s -o /etc/yum.repos.d/falcosecurity.repo https://falco.org/repo/falcosecurity-rpm.repo
 
 ## Install kernel headers:
-sudo yum -y install kernel-devel-$(uname -r)
+$ sudo yum -y install kernel-devel-$(uname -r)
 
 ## Install Falco:
-sudo yum -y install falco
+$ sudo yum -y install falco
 ```
 
 ## Start Falco service
 
 ```shell
 ## start falco
-systemctl start falco
-systemctl status falco
+$ sudo systemctl start falco
+$ sudo systemctl status falco
 ```
 
 ## Configure Falco Alerts
@@ -178,8 +177,8 @@ $ ansible-playbook deploy-falco-rules.yaml -e "NODES=nodes" -i hosts/deployments
 ## Uninstall Falco
 
 ```shell
-apt-get remove falco      # debian
-yum erase falco           # fedora
+$ apt-get remove falco      # debian
+$ yum erase falco           # fedora
 ```
 
 ## Rule Priorities
